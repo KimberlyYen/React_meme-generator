@@ -10,7 +10,7 @@ export default function Nav() {
           />
         </div>
         <div className="flex flex-row w-full">
-          <h1 className="text-xl font-bold "> Meme Generator</h1>
+          <h1 className="text-xl "> Meme Generator</h1>
           <p className="ml-auto">React Course - Project 3</p>
         </div>
       </div>

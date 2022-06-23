@@ -1,4 +1,12 @@
+// import { MemeImg } from '../components/MemeImg'
+import React from 'react'
+
 export default function Inputbtn() {
+  // console.log(MemeImg)
+  function aaa() {
+    console.log('aaa')
+  }
+
   return (
     <>
       <div className=" flex flex-col gap-4 ">
@@ -14,7 +22,10 @@ export default function Inputbtn() {
             value="and take my money"
           />
         </div>
-        <button className="text-white rounded-md h-9 bg-gradient-to-r from-purple-650 to-purple-450">
+        <button
+          className="text-white rounded-md h-9 bg-gradient-to-r from-purple-650 to-purple-450"
+          onClick={aaa}
+        >
           Get a new meme image 🖼
         </button>
       </div>
