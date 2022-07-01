@@ -1,23 +1,17 @@
-import React from 'react';
+import React , { useState } from 'react';
 import MemesData from '../memesData.js';
 
 export default function Inputbtn() {
-	function MemeImg() {
-		console.log('message');
-		// get Random
-		function getRandomInt(max) {
-			return Math.floor(Math.random() * max);
-		}
+	const [state, setState] = useState("");
+	
+	// onClick
+	const getMemeImage = function() {
+		const memesArray = MemesData.data.memes
+		const randomNumber = Math.floor(Math.random() * memesArray.length)
 
-		// get URL
-		function getRandomURL() {
-			const memeData = MemesData.data.memes;
-			let randomNumber = getRandomInt(memeData.length);
-			return memeData[randomNumber].url;
-		}
-
-		return <img className="w-full mt-4" src={getRandomURL()} alt="meme" />;
+		return setState(memesArray[randomNumber].url)
 	}
+
 
 	return (
 		<div className="flex flex-col gap-4 ">
@@ -35,11 +29,14 @@ export default function Inputbtn() {
 			</div>
 			<button
 				className="text-white rounded-md h-9 bg-gradient-to-r from-purple-650 to-purple-450"
-				onClick={MemeImg}
+				onClick={getMemeImage}
 			>
 				Get a new meme image 🖼
 			</button>
-			<MemeImg />
+			<img
+				className="w-full mt-4"
+				src={state}
+				alt="meme" />
 		</div>
 	);
 }
